@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  database:
+    image: postgres
+    container_name: sortui_db
+    restart: always
+    expose:
+      - 5433
+    ports:
+      - "5433:5433"
+    environment:
+      - POSTGRES_USER=admin_sortui
+      - POSTGRES_PASSWORD=b4J9g396D^L7^8Tm5
+      - POSTGRES_DB=sortui_db
+    volumes:
+      - pgdata:/data/sortui
+    command: -p 5433
+
+volumes:
+  pgdata:
+    driver: local
